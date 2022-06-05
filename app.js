@@ -8,43 +8,44 @@ app.set('view engine', 'handlebars')
 
 app.use(express.static('public'))
 
-const home = {
-  route: '',
-  button: '回到首頁',
-  title: '首頁'
-}
-const pages = [
-  {
+const pages = {
+  home: {
+    route: '',
+    button: '回到首頁',
+    title: '首頁'
+  },
+  about: {
     route: 'about',
     button: 'About',
     title: 'About'
   },
-  {
+  portfolio: {
     route: 'portfolio',
     button: 'Portfolio',
     title: 'Portfolio'
   },
-  {
+  content: {
     route: 'content',
     button: 'Content',
     title: 'Content'
   }
-]
+}
+
 
 app.get('/', (req, res) => {
-  res.render('index', { home: home, pages: pages, text: home })
+  res.render('index', { home: pages.home, pages: Object.values(pages), text: pages.home })
 })
 
 app.get('/about', (req, res) => {
-  res.render('index', { home: home, pages: pages, text: pages[0] })
+  res.render('index', { home: pages.home, pages: Object.values(pages), text: pages.about })
 })
 
 app.get('/portfolio', (req, res) => {
-  res.render('index', { home: home, pages: pages, text: pages[1] })
+  res.render('index', { home: pages.home, pages: Object.values(pages), text: pages.portfolio })
 })
 
 app.get('/content', (req, res) => {
-  res.render('index', { home: home, pages: pages, text: pages[2] })
+  res.render('index', { home: pages.home, pages: Object.values(pages), text: pages.content })
 })
 
 app.listen(port, () => {

@@ -1,12 +1,7 @@
 <!-- navigation -->
 <nav class="navbar">
   <div class="container">
-    <div>
-      <a href="/">
-        <button class="link-btn">{{home.button}}</button>
-      </a>
-    </div>
-    <div>
+    <div class="pages">
       {{#each pages}}
         <a href="/{{this.route}}">
           <button class="link-btn">{{this.button}}</button>

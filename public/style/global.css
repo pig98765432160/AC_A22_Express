@@ -5,3 +5,7 @@
   padding: 5px 10px;
   font-weight: 600;
 }
+.pages {
+  display: grid;
+  grid-template-columns: minmax(800px, 1fr) 1fr 1fr 1fr;
+}
