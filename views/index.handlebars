@@ -1,0 +1,20 @@
+<!-- navigation -->
+<nav class="navbar">
+  <div class="container">
+    <div>
+      <a href="/">
+        <button class="link-btn">{{home.button}}</button>
+      </a>
+    </div>
+    <div>
+      {{#each pages}}
+        <a href="/{{this.route}}">
+          <button class="link-btn">{{this.button}}</button>
+        </a>
+      {{/each}}
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <h3 class="fw-bold mt-5">{{text.title}}</h3>
+</div>
